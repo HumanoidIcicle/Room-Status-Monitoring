@@ -3,9 +3,9 @@
 #include <ArduinoJson.h>
 
 #define PORT 1883
-#define SSID  "Jeremy Consolidated"
-#define PASSWORD  "HUAJOVP30"
-#define MQTT_SERVER "10.50.172.213"
+#define SSID  "SSID_NAME"
+#define PASSWORD  "PASSWORD"
+#define MQTT_SERVER "SERVER_NAME"
 
 WiFiClient sinkNode;
 PubSubClient client(sinkNode); 
@@ -84,6 +84,7 @@ void callback(char* topic, byte* payload, unsigned int length){
     Serial.println(" %");
   Serial.println("\t=====================================");
 }
+
 void connect_wifi(){
   Serial.println("Connecting WiFi...");
   WiFi.begin(SSID, PASSWORD);

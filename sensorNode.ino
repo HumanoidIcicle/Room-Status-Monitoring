@@ -17,7 +17,7 @@ void loop() {
   initialize_and_publish();
   Serial.println("Light sleep 4 sec...");
 
-  esp_sleep_enable_timer_wakeup(4 * 1000000ULL);
+  esp_sleep_enable_timer_wakeup(4 * 1000000ULL); //INPUT THE LIGHT SLEEP DURATION
   esp_light_sleep_start();
   Serial.println("Woke up!");
 }

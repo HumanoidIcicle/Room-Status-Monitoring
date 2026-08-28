@@ -11,9 +11,9 @@
 #define Buzzer 13
 
 #define PORT 1883
-#define SSID  "Jeremy Consolidated"
-#define PASSWORD  "HUAJOVP30"
-#define MQTT_SERVER "10.50.172.213"
+#define SSID  "SSID_NAME"
+#define PASSWORD  "PASSWORD"
+#define MQTT_SERVER "SERVER_NAME"
 
 extern PubSubClient client;
 

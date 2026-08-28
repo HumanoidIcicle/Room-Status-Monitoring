@@ -17,7 +17,7 @@ const char* name = "Room 1"; //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGE FOR EACH N
 
 void DHT11_values(){ //Declare and initialize key:value pairs of sensor data into the json object
   data["nodeName"] = name; 
-  data["dht_hum"] = dht.readHumidity() - 7.5;
+  data["dht_hum"] = dht.readHumidity() - 7.5; //Added offset calibration to handle difference between the sensors
   data["dht_temp"] = dht.readTemperature() + 5.0;
 }
 
@@ -41,7 +41,7 @@ void SCD40_values(){
   float humidity;
 
   uint16_t error;
-  delay(5000);   // SCD40 updates every ~5 sec
+  delay(5000);   // Wait for SCD40 to update (approx. 5sec)
   
   error = scd4x.readMeasurement(co2, temperature, humidity);  //Read and store the measurements into the variables, returns the reading status 
   if (error) {
@@ -53,7 +53,6 @@ void SCD40_values(){
   data["scd_temp"] = temperature;
   data["scd_hum"] = humidity;
   data["scd_air"] = co2;
-  
 }
 
 void data_to_send(char* output, size_t size){

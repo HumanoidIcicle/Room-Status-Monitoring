@@ -6,10 +6,9 @@
 #include <Wire.h>     //initializes the Wire library and joins the I2C bus as either a master (controller) or slave (peripheral) device
 #include <SensirionI2cScd4x.h> 
 
-// mosquitto_sub -h 10.50.172.213 -t sensor/nodes
-// cd "C:\Program Files\Mosquitto"
-const char* topic = "sensor/nodes";
-const char* results = "results/room1";  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGE FOR EACH NODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const char* topic = "sensor/nodes"; // NAME OF THE TOPIC
+const char* results = "results/room1";  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGE NAME FOR EACH NODE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 WiFiClient sensorNode;
 PubSubClient client(sensorNode);
